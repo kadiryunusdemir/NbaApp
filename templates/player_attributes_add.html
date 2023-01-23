@@ -1,0 +1,360 @@
+{% extends "layout.html" %}
+{% block title %}Add a Player Attribute{% endblock %}
+{% block content %}
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h2 class="display-4">Add a Player Attribute</h2>
+</div>
+<!-- Since the action attribute is empty , when the “Save” button is clicked, the form data will be posted to the same address as the current one.  -->
+<form action="" method="post" name="player_attributes">
+    {{ form.csrf_token }}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-4">
+                <div>
+                    <label for="first_name">First Name</label>
+                    <div class="form-group col-md-12">
+                        {{ form.first_name (required=True, autofocus=True, class='form-control') }}
+                    </div>
+                    {% for error in form.first_name.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="last_name">Last Name</label>
+                    <div class="form-group col-md-12">
+                        {{ form.last_name (required=True, autofocus=True, class='form-control')  }}
+                    </div>
+                    {% for error in form.last_name.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="display_fi_last">First and Last Name</label>
+                    <div class="form-group col-md-12">
+                        {{ form.display_fi_last (class='form-control')  }}
+                    </div>
+                    {% for error in form.display_fi_last.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="player_slug">Player Slug</label>
+                    <div class="form-group col-md-12">
+                        {{ form.player_slug (class='form-control')  }}
+                    </div>
+                    {% for error in form.player_slug.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="birthdate">Birthdate</label>
+                    <div class="form-group col-md-12">
+                        {{ form.birthdate (class='form-control') }}
+                    </div>
+                    {% for error in form.birthdate.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="country">Country</label>
+                    <div class="form-group col-md-12">
+                        {{ form.country (class='form-control') }}
+                    </div>
+                    {% for error in form.country.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="height">Height</label>
+                    <div class="form-group col-md-12">
+                        {{ form.height (class='form-control') }}
+                    </div>
+                    {% for error in form.height.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="weight">Weight</label>
+                    <div class="form-group col-md-12">
+                        {{ form.weight (class='form-control') }}
+                    </div>
+                    {% for error in form.weight.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="season_exp">Season Experiment</label>
+                    <div class="form-group col-md-12">
+                        {{ form.season_exp (class='form-control') }}
+                    </div>
+                    {% for error in form.season_exp.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="jersey">Jersey</label>
+                    <div class="form-group col-md-12">
+                        {{ form.jersey (class='form-control') }}
+                    </div>
+                    {% for error in form.jersey.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="position">Position</label>
+                    <div class="form-group col-md-12">
+                        {{ form.position (class='form-control') }}
+                    </div>
+                    {% for error in form.position.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="rosterStatus">Roster Status</label>
+                    <div class="form-group col-md-12">
+                        {{ form.rosterStatus (class='form-control') }}
+                    </div>
+                    {% for error in form.rosterStatus.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="games_played_current_season_flag">Games Played Current Season Flag</label>
+                    <div class="form-group col-md-12">
+                        {{ form.games_played_current_season_flag (class='form-control') }}
+                    </div>
+                    {% for error in form.games_played_current_season_flag.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="teams">Team</label>
+                    <div class="form-group col-md-12">
+                        {{ form.teams (class='form-control') }}
+                    </div>
+                    {% for error in form.teams.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                
+
+                <div>
+                    <label for="playerCode">Player Code</label>
+                    <div class="form-group col-md-12">
+                        {{ form.playerCode (class='form-control') }}
+                    </div>
+                    {% for error in form.playerCode.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="from_year">From Year</label>
+                    <div class="form-group col-md-12">
+                        {{ form.from_year (class='form-control') }}
+                    </div>
+                    {% for error in form.from_year.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="to_year">To Year</label>
+                    <div class="form-group col-md-12">
+                        {{ form.to_year (class='form-control') }}
+                    </div>
+                    {% for error in form.to_year.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="dleague_flag">Dleague Flag</label>
+                    <div class="form-group col-md-12">
+                        {{ form.dleague_flag (class='form-control') }}
+                    </div>
+                    {% for error in form.dleague_flag.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="nba_flag">NBA Flag</label>
+                    <div class="form-group col-md-12">
+                        {{ form.nba_flag (class='form-control') }}
+                    </div>
+                    {% for error in form.nba_flag.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="games_played_flag">Games Played Flag</label>
+                    <div class="form-group col-md-12">
+                        {{ form.games_played_flag (class='form-control') }}
+                    </div>
+                    {% for error in form.games_played_flag.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="draft_year">Draft Year</label>
+                    <div class="form-group col-md-12">
+                        {{ form.draft_year (class='form-control') }}
+                    </div>
+                    {% for error in form.draft_year.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="draft_round">Draft Round</label>
+                    <div class="form-group col-md-12">
+                        {{ form.draft_round (class='form-control') }}
+                    </div>
+                    {% for error in form.draft_round.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="draft_number">Draft Number</label>
+                    <div class="form-group col-md-12">
+                        {{ form.draft_number (class='form-control') }}
+                    </div>
+                    {% for error in form.draft_number.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="pts">PTS</label>
+                    <div class="form-group col-md-12">
+                        {{ form.pts (class='form-control') }}
+                    </div>
+                    {% for error in form.pts.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="ast">AST</label>
+                    <div class="form-group col-md-12">
+                        {{ form.ast (class='form-control') }}
+                    </div>
+                    {% for error in form.ast.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="reb">REB</label>
+                    <div class="form-group col-md-12">
+                        {{ form.reb (class='form-control') }}
+                    </div>
+                    {% for error in form.reb.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="all_star_appearances">All Star Apperances</label>
+                    <div class="form-group col-md-12">
+                        {{ form.all_star_appearances (class='form-control') }}
+                    </div>
+                    {% for error in form.all_star_appearances.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <label for="pie">PIE</label>
+                    <div class="form-group col-md-12">
+                        <div class="pb-3">
+                            {{ form.pie (class='form-control') }}
+                        </div>
+                    </div>
+                    {% for error in form.pie.errors %}
+                    <p>
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+                
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-outline-success">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

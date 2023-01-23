@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}Players{% endblock %}
+{% block content %}
+
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h2 class="display-4">Players</h2>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <div class="pb-3">
+            <a href="{{ url_for('add_player_page') }}" class="btn btn-outline-success">Add a Player</a>
+        </div>
+    </div>
+    {% if players %}
+    <form action="" method="post" name="player_list">
+
+
+        <div class="container">
+            
+            <div class="row mb-3 text-center">
+                {% for player in players %}
+                    <div class="col-md-4 p-3 box-shadow">
+                        <div class="card-header">
+                            <a class="btn btn-secondary" href="{{ url_for('player_page', player_id=player.id) }}">{{ player.full_name }}</a>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li class='player-id'>Player ID:  {{ player.id }}</li>
+                                <li class='player-name'>Player Name:  {{ player.first_name }}</li>
+                                <li class='player-lastname'>Player Last Name:  {{ player.last_name }}</li>
+                                <li class='player-is-active'>Is Active:  {{ player.is_active }}</li>
+                            </ul>
+                            <a href="{{ url_for('edit_player_page', player_id=player.id) }}" class="btn btn-outline-info">Edit</a>
+                            <a class="btn btn-outline-warning" href="{{ url_for('delete_player_page', id=player.id) }}">Delete</a>
+                        </div>
+                    </div>
+                {% endfor %}    
+            </div>
+            
+        </div>
+
+            
+            
+            
+        
+    </form>
+    {% endif %}
+{% endblock %}

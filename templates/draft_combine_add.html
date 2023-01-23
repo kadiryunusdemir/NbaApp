@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+{% block title %}Add a Draft Combine{% endblock %}
+{% block content %}
+<h1>Add a Draft Combine</h1>
+<!-- Since the action attribute is empty , when the “Save” button is clicked, the form data will be posted to the same address as the current one.  -->
+<form action="" method="post" name="draft_combine">
+    {{ form.csrf_token }}
+    <div>
+        <label for="yearCombine">Year Combine</label>
+        <div>
+            {{ form.yearCombine (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.yearCombine.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div>
+        <label for="idPlayer">Player ID</label>
+        <div>
+            {{ form.idPlayer (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.idPlayer.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div>
+        <label for="slugPosition">Slug Position</label>
+        <div>
+            {{ form.slugPosition (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.slugPosition.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="heightWOShoesInches">Height WOShoes Inches</label>
+        <div>
+            {{ form.heightWOShoesInches (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.heightWOShoesInches.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="heightWOShoes">Height WOShoes</label>
+        <div>
+            {{ form.heightWOShoes (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.heightWOShoes.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="weightLBS">Weight LBS</label>
+        <div>
+            {{ form.weightLBS (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.weightLBS.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="wingspanInches">Wingspan Inches</label>
+        <div>
+            {{ form.wingspanInches (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.wingspanInches.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="wingspan">Wingspan</label>
+        <div>
+            {{ form.wingspan (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.wingspan.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="reachStandingInches">Reach Standing Inches</label>
+        <div>
+            {{ form.reachStandingInches (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.reachStandingInches.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="reachStandingO">Reach StandingO</label>
+        <div>
+            {{ form.reachStandingO (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.reachStandingO.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="verticalLeapStandingInches">Vertical Leap Standing Inches</label>
+        <div>
+            {{ form.verticalLeapStandingInches (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.verticalLeapStandingInches.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="verticalLeapMaxInches">Vertical Leap Max Inches</label>
+        <div>
+            {{ form.verticalLeapMaxInches (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.verticalLeapMaxInches.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="timeLaneAgility">Time Lane Agility</label>
+        <div>
+            {{ form.timeLaneAgility (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.timeLaneAgility.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="timeThreeQuarterCourtSprint">Time Three Quarter Court Sprint</label>
+        <div>
+            {{ form.timeThreeQuarterCourtSprint (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.timeThreeQuarterCourtSprint.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="repsBenchPress135">Reps Bench Press135</label>
+        <div>
+            {{ form.repsBenchPress135 (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.repsBenchPress135.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <div>
+            <button class="btn btn-outline-primary">Save</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

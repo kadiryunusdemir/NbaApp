@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}Player Bios{% endblock %}
+{% block content %}
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h2 class="display-4">Player Bios</h2>
+    </div>
+    {% if player_bios %}
+        <div class="container">
+            <div class="row">
+                {% for player_bios in player_bios %}
+                    <div class="col-md-4 p-3 border bg-light">
+                        <h3 class="player-bio-name">{{ player_bios.namePlayerBREF }}</h3>
+                        <p class="player-bio-bio">Player Biography:  {{ player_bios.urlPlayerBioBREF }}</p>
+                        <p class="player-bio-table-name">Table Name:  {{ player_bios.nameTable }}</p>
+                        <p class="player-bio-player-image">Player Image:  {{ player_bios.urlPlayerImageBREF }}</p>
+                        <p class="player-bio-player-slug">Player Slug:  {{ player_bios.slugPlayerBREF }}</p>
+                        <p class="player-bio-transaction">Transaction Player Number:  {{ player_bios.numberTransactionPlayer }}</p>
+                        <p class="player-bio-date">Date Transaction:  {{ player_bios.dateTransaction }}</p>
+                        <p class="player-bio-description">Description Transaction:  {{ player_bios.descriptionTransaction }}</p>
+                        <p class="player-bio-slug">Slug Season:  {{ player_bios.slugSeason }}</p>
+                        <p class="player-bio-team">Team:  {{ player_bios.nameTeam }}</p>
+                        <p class="player-bio-slug-league">Slug League:  {{ player_bios.slugLeague }}</p>
+                        <p class="player-bio-salary">Salary:  {{ player_bios.amountSalary }}</p>
+                        <p class="player-bio-contract">Contract Details:  {{ player_bios.detailsContract }}</p>
+                        <p class="player-bio-position">Position:  {{ player_bios.namePosition }}</p>
+                        <p class="player-bio-height">Height:  {{ player_bios.heightInches }}</p>
+                        <p class="player-bio-weight">Weight:  {{ player_bios.weightLBS }}</p>
+                        <p class="player-bio-birthdate">Birthdate:  {{ player_bios.dateBirth }}</p>
+                        <p class="player-bio-birthplace">Birthplace:  {{ player_bios.locationBirthplace }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <hr>
+
+        </div>
+
+    {% endif %}
+{% endblock %}

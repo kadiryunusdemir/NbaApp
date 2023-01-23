@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %} {{game.gameID}} {% endblock %}
+{% block content %}
+    <h1>Match - {{game.gameID}}</h1>
+    <table class="table table-hover">
+
+        <tr>
+            <th>Home Team ID</th>
+            <td>{{ game.teamIDHome }}</td>
+        </tr>
+        <tr>
+            <th>Home Team Name</th>
+            <td>{{ game.teamNameHome }}</td>
+        </tr>
+        <tr>
+            <th>Home Win - Lose</th>
+            <td>{{ game.WLHome }}</td>
+        </tr>
+        <tr>
+            <th>Home Points</th>
+            <td>{{ game.pointsHome }}</td>
+        </tr>
+        <tr>
+            <th>Away Team ID</th>
+            <td>{{ game.teamIDAway }}</td>
+        </tr>
+        <tr>
+            <th>Away Team Name</th>
+            <td>{{ game.teamNameAway }}</td>
+        </tr>
+        <tr>
+            <th>Away Win - Lose</th>
+            <td>{{ game.WLAway }}</td>
+        </tr>
+        <tr>
+            <th>Away Points</th>
+            <td>{{ game.pointsAway }}</td>
+        </tr>
+    </table>
+{% endblock %}

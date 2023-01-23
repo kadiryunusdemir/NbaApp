@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block title %}Update Player{% endblock %}
+{% block content %}
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h2 class="display-4">Update Player</h2>
+</div>
+
+<!-- Since the action attribute is empty , when the “Save” button is clicked, the form data will be posted to the same address as the current one.  -->
+<form action="" method="post" name="Player_edit">
+    {{ form.csrf_token }}
+
+
+    <div class="row mb-3">
+        <label for="full_name" class="col-sm-2 col-form-label">Full Name</label>
+        <div class="col-sm-10">
+            {{ form.full_name (required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.full_name.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="first_name" class="col-sm-2 col-form-label">First Name</label>
+        <div class="col-sm-10">
+            {{ form.first_name (required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.first_name.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="last_name" class="col-sm-2 col-form-label">Full Name</label>
+        <div class="col-sm-10">
+            {{ form.last_name (required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.last_name.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="is_active" class="col-sm-2 col-form-label">Is Active</label>
+        <div class="col-sm-10">
+            {{ form.is_active (class='form-control')}}
+        </div>
+        {% for error in form.is_active.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="d-flex justify-content-end align-items-center mb-3">
+        <button class="btn btn-outline-primary">Save</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}Player Attributes{% endblock %}
+{% block content %}
+
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h2 class="display-4">Player Attributes</h2>
+    </div>
+
+    <br />
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{{ url_for('add_player_attributes_page') }}" class="btn btn-outline-success">Add Player Attributes</a>
+    </div>
+
+    <br />
+
+    {% if player_attributes %}
+    <form action="" method="post" name="player_attributes_list">    
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                {% for player_attributes in player_attributes %}
+                    <div class="col-md-4 p-3 border bg-light">
+                        <h3>{{ player_attributes.display_fi_last}}</h3>
+                        <p class="name">First &amp; Name: <bold>{{ player_attributes.first_name }} {{ player_attributes.last_name }}</bold></p>
+                        <p class="country">Country: <bold>{{ player_attributes.country }}</bold></p>
+                        <p class="last-affilation">Last Affilation: <bold>{{ player_attributes.last_affiliation }}</bold></p>
+                        <p class="height">Height: <bold>{{ player_attributes.height }}</bold></p>
+                        <p class="weight">Weight: <bold>{{ player_attributes.weight }}</bold></p>
+                        <p class="season-experience">Season Experience: <bold>{{ player_attributes.season_exp }}</bold></p>
+                        <p class="position">Position: <bold>{{ player_attributes.position }}</bold></p>
+                        <p class="team">Team: <bold>{{ player_attributes.team_name }}</bold></p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p><a class="btn btn-secondary" href="{{ url_for('player_attributes_page', player_id=player_attributes.id) }}" role="button">View details</a></p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><a href="{{ url_for('edit_player_attributes_page', player_attributes_id=player_attributes.id) }}" class="btn btn-outline-info">Edit</a></p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><a href="{{ url_for('delete_player_attributes_page', id=player_attributes.id) }}"  class="btn btn-outline-warning">Delete</a></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <hr>
+    
+          </div>
+    </form>
+    {% endif %}
+    
+{% endblock %}

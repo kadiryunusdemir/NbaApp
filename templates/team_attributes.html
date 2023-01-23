@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block title %}{{ abbr }}{% endblock %}
+{% block content %}
+<h1>Team Attributes - {{ abbr }}</h1>
+
+<table class="table table-hover">
+    <tr>
+        <th>Team ID</th>
+        <td>{{ team_attributes.team_id }}</td>
+    </tr>
+    <tr>
+        <th>Arena</th>
+        <td>{{ team_attributes.arena }}</td>
+    </tr>
+    <tr>
+        <th>Arena Capacity</th>
+        <td>{{ team_attributes.arena_capacity }}</td>
+    </tr>
+    <tr>
+        <th>Owner</th>
+        <td>{{ team_attributes.owner }}</td>
+    </tr>
+    <tr>
+        <th>General Manager</th>
+        <td>{{ team_attributes.general_manager }}</td>
+    </tr>
+    <tr>
+        <th>Head Coach</th>
+        <td>{{ team_attributes.head_coach }}</td>
+    </tr>
+    <tr>
+        <th>D League Team</th>
+        <td>{{ team_attributes.d_league_affiliation }}</td>
+    </tr>
+    <tr>
+        <th>Facebook Website</th>
+        <td>{{ team_attributes.facebook_website_link }}</td>
+    </tr>
+    <tr>
+        <th>Instagram Website</th>
+        <td>{{ team_attributes.instagram_website_link }}</td>
+    </tr>
+    <tr>
+        <th>Twitter Website</th>
+        <td>{{ team_attributes.twitter_website_link }}</td>
+    </tr>
+</table>
+{% endblock %}

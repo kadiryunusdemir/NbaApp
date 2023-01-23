@@ -1,0 +1,29 @@
+07-13 November:
+    - I completed Turgut Uyar's Flask Tutorial.
+
+14-20 November:
+    - I added SQL statements for team and team attributes tables and their's entries
+    to database.sql and dataset.sql files.
+
+21-27 November:
+	- I created our base server.py file and arranged our Postgres server on ElephantSQL.
+	- I created Team class, simple pages for listing teams and listing details of a team,
+	database functions and view functions for these listing actions.
+
+28-04 December:
+    - I created Team Attributes class, simple pages for listing teams' attributes and listing attributes of a team,
+	database functions and view functions for these listing actions.
+
+04-11 December:
+    - I added add, update and delete functionality for team table. I created suitable database functions,
+    form function and view function. Also, I created a simple edit page for teams.
+    - I added add, update and delete functionality for team attributes table. I created suitable database functions,
+    form function and view function. Also, I created a simple edit page for teams' attributes.
+    - Focused on try catch methods for database actions and flash messages.
+    
+12-18 December:
+    - I tuned add and edit pages for team attributes table. Because of the foreign key constraint, 
+    I add extra functionality for bettew UX for example showing related team's abbreviation which is joined from team table.
+    - I added Bootstap theme to all pages and rearranged some views.
+    - I added search function for listing pages.
+    - I added login/logout functionality to site.

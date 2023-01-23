@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}{{ player_attributes.display_fi_last }}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h2 class="display-4">Player Attributes - {{ player_attributes.display_fi_last }}</h2>
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action">Player ID:  {{ player_attributes.id }}</li>
+            <li class="list-group-item list-group-item-action">First &amp; Name:  {{ player_attributes.display_fi_last }}</li>
+            <li class="list-group-item list-group-item-action">Player Slug:  {{ player_attributes.player_slug }}</li>
+            <li class="list-group-item list-group-item-action">Country:  {{ player_attributes.country }}</li>
+            <li class="list-group-item list-group-item-action">Last Affilation:  {{ player_attributes.last_affiliation }}</li>
+            <li class="list-group-item list-group-item-action">Height:  {{ player_attributes.height }}</li>
+            <li class="list-group-item list-group-item-action">Weight:  {{ player_attributes.weight }}</li>
+            <li class="list-group-item list-group-item-action">Season Experiment:  {{ player_attributes.season_exp }}</li>
+            <li class="list-group-item list-group-item-action">Jersey:  {{ player_attributes.jersey }}</li>
+            <li class="list-group-item list-group-item-action">Position:  {{ player_attributes.position }}</li>
+            <li class="list-group-item list-group-item-action">Roster Status:  {{ player_attributes.rosterStatus }}</li>
+            <li class="list-group-item list-group-item-action">Games Played in Current Season:  {{ player_attributes.games_played_current_season_flag }}</li>
+            <li class="list-group-item list-group-item-action">Team ID:  {{ player_attributes.team_id }}</li>
+            <li class="list-group-item list-group-item-action">Team Name:  {{ player_attributes.team_name }}</li>
+            <li class="list-group-item list-group-item-action">Player Code:  {{ player_attributes.playerCode }}</li>
+            <li class="list-group-item list-group-item-action">From Year:  {{ player_attributes.from_year }}</li>
+            <li class="list-group-item list-group-item-action">To Year:  {{ player_attributes.to_year }}</li>
+            <li class="list-group-item list-group-item-action">Dleague Flag:  {{ player_attributes.dleague_flag }}</li>
+            <li class="list-group-item list-group-item-action">NBA Flag:  {{ player_attributes.nba_flag }}</li>
+            <li class="list-group-item list-group-item-action">Games Played Flag:  {{ player_attributes.games_played_flag }}</li>
+            <li class="list-group-item list-group-item-action">Draft Year:  {{ player_attributes.draft_year }}</li>
+            <li class="list-group-item list-group-item-action">Draft Round:  {{ player_attributes.draft_round }}</li>
+            <li class="list-group-item list-group-item-action">Draft Number:  {{ player_attributes.draft_number }}</li>
+            <li class="list-group-item list-group-item-action">PTS:  {{ player_attributes.pts }}</li>
+            <li class="list-group-item list-group-item-action">AST:  {{ player_attributes.ast }}</li>
+            <li class="list-group-item list-group-item-action">REB:  {{ player_attributes.reb }}</li>
+            <li class="list-group-item list-group-item-action">All Star Apperances: {{ player_attributes.all_star_appearances }}</li>
+            <li class="list-group-item list-group-item-action">PIE:  {{ player_attributes.pie }}</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

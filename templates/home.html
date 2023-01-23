@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h2 class="display-4">NBA</h2>
+    </div>
+    <div class="carousel slide carousel-dark carousel-fade" data-bs-ride="carousel" id="slider1">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#slider1" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#slider1" data-bs-slide-to="1"></li>
+          <li data-bs-target="#slider1" data-bs-slide-to="2"></li>
+          <li data-bs-target="#slider1" data-bs-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/utgfcacoxl6hwd2bj2ay/10-most-influential-nba-players-2022-original-nonw?fimg-ssr-default" alt="">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://www.nbcsports.com/sites/rsnunited/files/styles/article_hero_image/public/article/hero/steph-curry-grant-williams-GETTY.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://static01.nyt.com/images/2022/11/15/sports/14nba-embiid1-print/14nba-embiid-1-mediumSquareAt3X.jpg" alt="">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://image.cnbcfm.com/api/v1/image/106734773-1602109942581-gettyimages-1228932015-finalsgame4_10062020_lakers_heat_butler_0781.jpeg?v=1602110070" alt="">
+          </div>
+        </div>
+        <a href="#slider1" class="carousel-control-prev" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a href="#slider1" class="carousel-control-next" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+{% endblock %}

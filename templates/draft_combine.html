@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block title %}{{ draft_combine.id }}{% endblock %}
+{% block content %}
+    <h1>Draft Combine - {{ draft_combine.id }}</h1>
+
+    <table class="table table-hover">
+        <tr>
+            <th>Year Combine</th>
+            <td>{{ draft_combine.yearCombine }}</td>
+        </tr>
+        <tr>
+            <th>Player ID</th>
+            <td>{{ draft_combine.idPlayer }}</td>
+        </tr>
+        <tr>
+            <th>Slug Position</th>
+            <td>{{ draft_combine.slugPosition }}</td>
+        </tr>
+        <tr>
+            <th>Height WOShoes Inches</th>
+            <td>{{ draft_combine.heightWOShoesInches }}</td>
+        </tr>
+        <tr>
+            <th>Height WOShoes</th>
+            <td>{{ draft_combine.heightWOShoes }}</td>
+        </tr>
+        <tr>
+            <th>Weight LBS</th>
+            <td>{{ draft_combine.weightLBS }}</td>
+        </tr>
+        <tr>
+            <th>Wingspan Inches</th>
+            <td>{{ draft_combine.wingspanInches }}</td>
+        </tr>
+        <tr>
+            <th>Wingspan</th>
+            <td>{{ draft_combine.wingspan }}</td>
+        </tr>
+        <tr>
+            <th>Reach Standing Inches</th>
+            <td>{{ draft_combine.reachStandingInches }}</td>
+        </tr>
+        <tr>
+            <th>Reach StandingO</th>
+            <td>{{ draft_combine.reachStandingO }}</td>
+        </tr>
+        <tr>
+            <th>Vertical Leap Standing Inches</th>
+            <td>{{ draft_combine.verticalLeapStandingInches }}</td>
+        </tr>
+        <tr>
+            <th>Vertical Leap Max Inches</th>
+            <td>{{ draft_combine.verticalLeapMaxInches }}</td>
+        </tr>
+        <tr>
+            <th>Time Lane Agility</th>
+            <td>{{ draft_combine.timeLaneAgility }}</td>
+        </tr>
+        <tr>
+            <th>Time Three Quarter Court Sprint</th>
+            <td>{{ draft_combine.timeThreeQuarterCourtSprint }}</td>
+        </tr>
+        <tr>
+            <th>Reps Bench Press135</th>
+            <td>{{ draft_combine.repsBenchPress135 }}</td>
+        </tr>
+    </table>
+{% endblock %}

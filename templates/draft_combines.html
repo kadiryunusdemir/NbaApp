@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %}Draft Combine{% endblock %}
+{% block content %}
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h2 class="display-4">Draft Combine</h2>
+    </div>
+    <a type="button" class="btn btn-outline-success" href="{{ url_for('add_draft_combine_page') }}">Add Draft Combine</a>
+    {% if draft_combines %}
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Year Combine</th>
+                    <th>Player ID</th>
+                    <th>Slug Position</th>
+                    <th>Height WOShoes Inches</th>
+                    <th>Height WOShoes</th>
+                    <th>Weight LBS</th>
+                    <th>Wingspan Inches</th>
+                    <th>Wingspan</th>
+                    <th>Reach Standing Inches</th>
+                    <th>Reach StandingO</th>
+                    <th>Vertical Leap Standing Inches</th>
+                    <th>Vertical Leap Max Inches</th>
+                    <th>Time Lane Agility</th>
+                    <th>Time Three Quarter Court Sprint</th>
+                    <th>Reps Bench Press135</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for draft_combine in draft_combines %}
+                <tr class="draft_combine_tr"> 
+                    <td class="draft_combine_yearCombine">{{ draft_combine.yearCombine }}</td>
+                    <td class="draft_combine_player_id"><a href="{{ url_for('player_page', player_id=draft_combine.idPlayer) }}">{{ draft_combine.idPlayer }}</a></td>
+                    <td class="draft_combine_slugPosition">{{ draft_combine.slugPosition }}</td>
+                    <td class="draft_combine_heightWOShoesInches">{{ draft_combine.heightWOShoesInches }}</td>
+                    <td class="draft_combine_heightWOShoes">{{ draft_combine.heightWOShoes}}</td>
+                    <td class="draft_combine_weightLBS">{{ draft_combine.weightLBS }}</td>
+                    <td class="draft_combine_wingspanInches">{{ draft_combine.wingspanInches }}</td>
+                    <td class="draft_combine_wingspan">{{ draft_combine.wingspan }}</td>
+                    <td class="draft_combine_reachStandingInches">{{ draft_combine.reachStandingInches }}</td>
+                    <td class="draft_combine_reachStandingO">{{ draft_combine.reachStandingO }}</td>
+                    <td class="draft_combine_verticalLeapStandingInches">{{ draft_combine.verticalLeapStandingInches }}</td>
+                    <td class="draft_combine_verticalLeapMaxInches">{{ draft_combine.verticalLeapMaxInches }}</td>
+                    <td class="draft_combine_timeLane">{{ draft_combine.timeLaneAgility }}</td>
+                    <td class="draft_combine_timeThree">{{ draft_combine.timeThreeQuarterCourtSprint }}</td>
+                    <td class="draft_combine_repsBench">{{ draft_combine.repsBenchPress135 }}</td>
+                    <td><a type="button" class="btn btn-outline-warning" href="{{ url_for('draft_combine_edit_page', id=draft_combine.id) }}">Edit</a></td>
+                    <td><a type="button" class="btn btn-outline-danger" href="{{ url_for('draft_combine_delete_page', id=draft_combine.id) }}">Delete</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+{% endblock %}

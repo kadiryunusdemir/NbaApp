@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}{{ player.full_name }}{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                <h2 class="display-4">Player - {{ player.full_name }}</h2>
+            </div>
+    
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action">Player ID:  {{ player.id }}</li>
+                <li class="list-group-item list-group-item-action">First &amp; Name:  {{ player.full_name }}</li>
+                <li class="list-group-item list-group-item-action">Player First Name:  {{ player.first_name }}</li>
+                <li class="list-group-item list-group-item-action">Player Last Name:  {{ player.last_name }}</li>
+                <li class="list-group-item list-group-item-action">Is Active:  {{ player.is_active }}</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

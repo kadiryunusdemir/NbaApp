@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+{% block title %}Add a Team Attribute{% endblock %}
+{% block content %}
+<h1>Add a Team Attribute</h1>
+
+<!-- Since the action attribute is empty , when the “Save” button is clicked, the form data will be posted to the same address as the current one.  -->
+<form action="" method="post" name="team_attributes">
+    {{ form.csrf_token }}
+
+    <div class="row mb-3">
+        <label for="teams" class="col-sm-2 col-form-label">Team</label>
+        <div class="col-sm-10">
+            {{ form.teams(autofocus=True, class='form-select form-select-lg') }}
+        </div>
+        {% for error in form.teams.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="arena" class="col-sm-2 col-form-label">Arena</label>
+        <div class="col-sm-10">
+            {{ form.arena(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.arena.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="arena_capacity" class="col-sm-2 col-form-label">Arena Capacity</label>
+        <div class="col-sm-10">
+            {{ form.arena_capacity(class='form-control') }}
+        </div>
+        {% for error in form.arena_capacity.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="owner" class="col-sm-2 col-form-label">Owner</label>
+        <div class="col-sm-10">
+            {{ form.owner(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.owner.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="general_manager" class="col-sm-2 col-form-label">General Manager</label>
+        <div class="col-sm-10">
+            {{ form.general_manager(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.general_manager.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="head_coach" class="col-sm-2 col-form-label">Head Coach</label>
+        <div class="col-sm-10">
+            {{ form.head_coach(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.head_coach.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="d_league_affiliation" class="col-sm-2 col-form-label">D League Team</label>
+        <div class="col-sm-10">
+            {{ form.d_league_affiliation(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.d_league_affiliation.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="facebook_website_link" class="col-sm-2 col-form-label">Facebook Website</label>
+        <div class="col-sm-10">
+            {{ form.facebook_website_link(class='form-control') }}
+        </div>
+        {% for error in form.facebook_website_link.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="instagram_website_link" class="col-sm-2 col-form-label">Instagram Website</label>
+        <div class="col-sm-10">
+            {{ form.instagram_website_link(class='form-control') }}
+        </div>
+        {% for error in form.instagram_website_link.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="twitter_website_link" class="col-sm-2 col-form-label">Twitter Website</label>
+        <div class="col-sm-10">
+            {{ form.twitter_website_link(class='form-control') }}
+        </div>
+        {% for error in form.twitter_website_link.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="d-flex justify-content-end align-items-center mb-3">
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}Games{% endblock %}
+{% block content %}
+    <h1>Matches</h1>
+<form action="" method="post" name="search">
+    <div class="d-flex justify-content-end align-items-center my-3">
+        <input type="search" class="form-control form-control-dark text-bg-dark w-25" placeholder="Search..." aria-label="Search" name="search">
+    </div>
+</form>
+    <a type= "button" class= "btn btn-secondary"  href="{{ url_for('game_add_page') }}">Add a Game</a>
+    {% if games %}
+    <form action="" method="post" name="games">
+        <table class="table table-hover">
+            <tr>
+                <th>Game ID</th>
+                <th>Game Date</th>
+                <th>Home Team ID</th>
+                <th>Home Team Name</th>
+                <th>Home Win-Lose</th>
+                <th>Home Points</th>
+                <th>Away Team ID</th>
+                <th>Away Team Name</th>
+                <th>Away Win-Lose</th>
+                <th>Away Points</th>
+            </tr>
+            {% for game in games %}
+            <tr>
+               <td><a href="{{ url_for('game_page', gameID=game.gameID) }}" style="text-decoration:none">{{ game.gameID }}</a></td>
+                <td>{{ game.gameDate }}</td>
+                <td>{{ game.teamIDHome }}</td>
+                <td>{{ game.teamNameHome }}</td>
+                <td>{{ game.WLHome }}</td>
+                <td>{{ game.pointsHome }}</td>
+                <td>{{ game.teamIDAway }}</td>
+                <td>{{ game.teamNameAway }}</td>
+                <td>{{ game.WLAway }}</td>
+                <td>{{ game.pointsAway }}</td>
+                <td><a href="{{ url_for('game_edit_page', gameID=game.gameID) }}" style="text-decoration:none">Edit</a></td>
+                {% if current_user.is_admin %}
+                <td><input type="checkbox" name="deletedMatch" value="{{ game.gameID }}" class="form-check-input"/></td>
+                {% endif %}
+                <!--<td><input type=hidden value="{{ gameID }}" name=deletedMatch /><button>Delete</button></td>-->
+
+            </tr>
+            {% endfor %}
+        </table>
+        {% if current_user.is_admin %}
+        <div>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+        {% endif %}
+    </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block title %}Draft{% endblock %}
+{% block content %}
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h2 class="display-4">Draft</h2>
+</div>
+    <a type="button" class="btn btn-outline-success" href="{{ url_for('add_draft_page') }}">Add Draft</a>
+    {% if drafts %}
+    <div class="table-responsive">
+        <table class="table table-striped table-hover text-nowrap">
+            <thead>
+                <tr>
+                    <th>Year Draft</th>
+                    <th>Number Pick Over All</th>
+                    <th>Number Round</th>
+                    <th>Number Round Pick</th>
+                    <th>Name Organization From</th>
+                    <th>Type Organization From</th>
+                    <th>Player ID</th>
+                    <th>Team ID</th>
+                    <th>Player Profile Flag</th>
+                    <th>Slug Organization Type From</th>
+                    <th>Location Organization From</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            {% for draft in drafts %}
+                <tr class="draft_tr">
+                    <td class="draft_year">{{ draft.yearDraft }}</td>
+                    <td class="draft_number">{{ draft.numberPickOverAll }}</td>
+                    <td class="draft_number_round">{{ draft.numberRound }}</td>
+                    <td class="draft_number_round_pick">{{ draft.numberRoundPick }}</td>
+                    <td class="draft_name_organization">{{ draft.nameOrganizationFrom }}</td>
+                    <td class="draft_type_organization">{{ draft.typeOrganizationFrom }}</td>
+                    <td class="draft_id_player"><a href="{{ url_for('player_page', player_id=draft.idPlayer) }}">{{ draft.idPlayer }}</a></td>
+                    <td class="draft_id_team"><a href="{{ url_for('team_page', team_id=draft.team_id) }}">{{ draft.team_id }}</a></td>
+                    <td class="draft_profile_flag">{{ draft.Player_Profile_Flag }}</td>
+                    <td class="draft_slug_organization">{{ draft.slugOrganizationTypeFrom }}</td>
+                    <td class="draft_location_organization">{{ draft.locationOrganizationFrom }}</td>
+                    <td><a type="button" class="btn btn-outline-warning" href="{{ url_for('draft_edit_page', id=draft.id) }}">Edit</a></td>
+                    <td><a type="button" class="btn btn-outline-danger" href="{{ url_for('draft_delete_page', id=draft.id) }}">Delete</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+{% endblock %}

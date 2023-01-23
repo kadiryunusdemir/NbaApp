@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+{% block title %}Add a Game{% endblock %}
+{% block content %}
+<h1>Add a Game</h1>
+<form action="" method="post" name="game">
+    {{ form.csrf_token }}
+    <div>
+        <label for="teamIDHome">teamIDHome</label>
+        <div>
+            {{ form.teamIDHome (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.teamIDHome.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div>
+        <label for="teamNameHome">teamNameHome</label>
+        <div>
+            {{ form.teamNameHome (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.teamNameHome.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div>
+        <label for="gameDate">gameDate</label>
+        <div>
+            {{ form.gameDate (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.gameDate.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="WLHome">WLHome</label>
+        <div>
+            {{ form.WLHome (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.WLHome.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="pointsHome">pointsHome</label>
+        <div>
+            {{ form.pointsHome (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.pointsHome.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="teamIDAway">teamIDAway</label>
+        <div>
+            {{ form.teamIDAway (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.teamIDAway.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="teamNameAway">teamNameAway</label>
+        <div>
+            {{ form.teamNameAway (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.teamNameAway.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="WLAway">WLAway</label>
+        <div>
+            {{ form.WLAway (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.WLAway.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="pointsAway">pointsAway</label>
+        <div>
+            {{ form.pointsAway (required=True, autofocus=True, class='input') }}
+        </div>
+        {% for error in form.pointsAway.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+    <div>
+        <div>
+            <button>Save</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

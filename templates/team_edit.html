@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block title %}{{ type }} a Team{% endblock %}
+{% block content %}
+<h1>{{ type }} a Team</h1>
+
+<!-- Since the action attribute is empty , when the “Save” button is clicked, the form data will be posted to the same address as the current one.  -->
+<form action="" method="post" name="team_edit">
+    {{ form.csrf_token }}
+
+    <div class="row mb-3">
+        <label for="full_name" class="col-sm-2 col-form-label">Full Name</label>
+        <div class="col-sm-10">
+            {{ form.full_name(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.full_name.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="abbreviation" class="col-sm-2 col-form-label">Abbreviation</label>
+        <div class="col-sm-10">
+            {{ form.abbreviation(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.abbreviation.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="nickname" class="col-sm-2 col-form-label">Nickname</label>
+        <div class="col-sm-10">
+            {{ form.nickname(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.nickname.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="city" class="col-sm-2 col-form-label">City</label>
+        <div class="col-sm-10">
+            {{ form.city(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.city.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="state" class="col-sm-2 col-form-label">State</label>
+        <div class="col-sm-10">
+            {{ form.state(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.state.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="row mb-3">
+        <label for="year_founded" class="col-sm-2 col-form-label">Year of Foundation</label>
+        <div class="col-sm-10">
+            {{ form.year_founded(required=True, autofocus=True, class='form-control') }}
+        </div>
+        {% for error in form.year_founded.errors %}
+        <p>
+            {{ error }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="d-flex justify-content-end align-items-center mb-3">
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>
+{% endblock %}
